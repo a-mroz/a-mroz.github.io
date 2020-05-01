@@ -2,9 +2,16 @@
 layout: post
 title:  "O zmiennych środowiskowych słów kilka"
 date:   2020-04-30 21:58:14 +0200
-categories: zmienne środowiskowe, env variables, linux, zsh, bash
+tags: [linux, zsh, bash, ]
 ---
 Zmienne środowiskowe. Temat niby prosty, ale ostatnio trochę musiałem się natłumaczyć i miałem kilka problemów z nimi związanymi. Stąd ten post (i pewnie kilka kolejnych w przyszłości). Nie zamierzam się silić na opisanie wszystkich niuansów i zastosowań, a raczej na pewnego rodzaju wstępie, który może pomóc osobie wchodzącej w temat.
+
+{% include image.html
+            img="/assets/shell-5020859_640.jpg"
+            alt="Real life shell"
+            caption="Real live shell - David Castillo"
+            url="https://pixabay.com/pl/users/phydc-2218105/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5020859"
+%}
 
 # Co to jest?
 
@@ -107,3 +114,12 @@ Kiedy używamy jakiejś zmiennej, to warto udokumentować, chociażby w pliku `R
 Trzeba jednak uważać, zachować zdrowy rozsądek i nie przesadzić z wyciągnięciem na zewnątrz aplikacji wszystkiego co się da, na zasadzie "może kiedyś się przyda". Nie chcemy sytuacji, że do włączenia naszej aplikacji potrzebne jest ustawienie stu zmiennych (gdzie część działa tylko wtedy gdy jakaś inna część jest skonfigurowana), zatańczenia tańca słońca i odmówienia trzech zdrowasiek.
 
 Jak zwykle, ważniejsze od tego żeby wiedzieć jak czegoś użyć jest to, kiedy tego użyć.
+
+
+<style>
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+</style>

@@ -2,7 +2,6 @@
 layout: post
 title:  "Hello world!"
 date:   2020-04-29 18:48:14 +0200
-categories: intro
 ---
 Cześć. Mam na imię Adam i jestem programistą.
 
