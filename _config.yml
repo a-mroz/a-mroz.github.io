@@ -30,6 +30,7 @@ show_excerpts: true
 
 author: Adam Mróz
 
+google_analytics: UA-165320383-1
 
 # Build settings
 markdown: kramdown
