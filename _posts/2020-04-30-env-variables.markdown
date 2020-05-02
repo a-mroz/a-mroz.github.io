@@ -2,7 +2,7 @@
 layout: post
 title:  "O zmiennych środowiskowych słów kilka"
 date:   2020-04-30 21:58:14 +0200
-tags: [linux, zsh, bash, ]
+tags: [linux, zsh, bash, env variables]
 ---
 Zmienne środowiskowe. Temat niby prosty, ale ostatnio trochę musiałem się natłumaczyć i miałem kilka problemów z nimi związanymi. Stąd ten post (i pewnie kilka kolejnych w przyszłości). Nie zamierzam się silić na opisanie wszystkich niuansów i zastosowań, a raczej na pewnego rodzaju wstępie, który może pomóc osobie wchodzącej w temat.
 
