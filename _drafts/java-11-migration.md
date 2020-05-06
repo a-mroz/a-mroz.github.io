@@ -40,37 +40,79 @@ To jest też dobry moment żeby zerknąć na strony projektowe zależności i sp
 
 Polecam też zwrócić uwagę na biblioteki typu `asm`, `byte-buddy`, `cglib`, `javassist`, `cglib` - bardzo prawdopodobne, że będą potrzebowały aktualizacji.
 
+Przy okazji warto przejrzeć zależności w projekcie. W moim przypadku okazało się, że część jest zaszłościami historycznymi i jest już niepotrzebna albo da się ich pozbyć przez modyfikację kilku linijek. Mniej zależności to mniejszy narzut na utrzymanie projektu, zwłaszcza projektach medycznych, gdzie trzeba przygotowywać np. kwartalne raporty z analizami nowych wersji zależności.
+
 ### Mockito
 
 Jeśli w projekcie jest jeszcze Mockito w wersji 1.x, to czas przejść do najnowszej wersji. Tym bardziej, że domyślnie Mockito 1.x nie zadziała w Javie 11 i konieczne jest [trochę zmian](https://github.com/mockito/mockito/issues/1419).
 
-Ale przy przechodzeniu na nowsze Mockito spodziewaj się dużo warningów i failujących testów (i dobrze!). Na przykład, w nowszych wersjach Mockito wykrywa niepotrzebne mockowanie, rzucanie checked Exception niezgodnych z sygnaturami metody itd. Więcej informacji https://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2 i https://asolntsev.github.io/en/2016/10/11/mockito-2.1/
+Ale przy przechodzeniu na nowsze Mockito spodziewaj się dużo warningów i failujących testów (i dobrze!). Na przykład, w nowszych wersjach Mockito wykrywa niepotrzebne mockowanie, rzucanie checked Exception niezgodnych z sygnaturami metody itp. Ogólnie mnóstwo rzeczy poprawiających testy. Więcej informacji na [wiki Mockito](https://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2) i w [tym wpisie](https://asolntsev.github.io/en/2016/10/11/mockito-2.1/).
 
-Przy okazji przejrzyj zależności. W moim przypadku okazało się, że część jest zaszłościami historycznymi i jest już niepotrzebna albo da się ich pozbyć przez modyfikację kilku linijek. Mniej zależności to mniejszy narzut na utrzymanie projektu, zwłaszcza projektach medycznych, gdzie trzeba przygotowywać np. kwartalne raporty z analizami nowych wersji zależności.
 
 # Kompilacja i testy
 
-Przełącz się na jdk i zbuduj projekt. Pamiętaj o zmianie wersji JDK w plikach mavena/gradla.
+Przełącz się na jdk i zbuduj projekt. Nie najgorszym pomysłem może być zbudowanie projektu na nowym JDK, ale przy zachowaniu kompatybilności ze starszą wersją i dopiero później ustawienie Javy 11.
 
-Jeśli używasz funkcjonalności z JEE: JAXB (np. używany przez Hibernate), annotacji `@PostConstruct` itd., to konieczne będzie dodanie nowych zależności. Java 9 wyrzuciła je ze standardowego JDK.
+```xml
+<properties>
+    <java.version>8</java.version> <!-- zmiana do 11 -->
+</properties>
+...
 
-+        <dependency>
-+            <groupId>javax.annotation</groupId>
-+            <artifactId>javax.annotation-api</artifactId>
-+            <version>${javax.annotation-api.version}</version>
-+        </dependency>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>${maven-compiler-plugin.version}</version>
+    <configuration>
+        <source>${java.version}</source>
+        <target>${java.version}</target>
+    </configuration>
+</plugin>
+```
+
+Tutaj już trzeba sprawdzać rzeczy jedna po drugiej - Google Twoim przyjacielem jest. Kilka rzeczy, które można napotkać:
+
+## Zależności do JEE
+
+Jeśli używasz funkcjonalności z JEE, na przykład:
+- JAXB (używany m.in. przez Hibernate),
+- CORBA,
+- JTA,
+- javax.annotation (`@PostConstruct`)
+
+to konieczne będzie dodanie nowych zależności. Posprzątano trochę i w Javie 9 zostały oznaczone jako przestarzałe, a w Javie 11 zostały [wyrzucone ze standardowego JDK](https://openjdk.java.net/jeps/320).
+
+Przykładowo, żeby móc używać `javax.annotation` (w tym `@PostConstruct`, którego jest w projekcie sporo):
+```xml
+<dependency>
+    <groupId>javax.annotation</groupId>
+    <artifactId>javax.annotation-api</artifactId>
+    <version>${javax.annotation-api.version}</version>
+</dependency>
+```
+
+## Zależności do sun.* i com.sun.*
+
+No i stało się. Chyba od zawsze ostrzegano, że używanie klas w tych pakietach nie jest bezpieczne i ostatecznie [nie ma już do nich dostępu](https://openjdk.java.net/jeps/260). To spowodowało trochę problemów dla różnych frameworków, ale ostatecznie sytuacja została opanowana.
+
+Na szczęście większość rzeczy została udostępniona w API, w lepszych, bardziej bezpiecznych wersjach. Na przykład `sun.misc.BASE64Encoder` może być zastąpiony `java.util.Base64.getEncoder()`.
 
 
+## Locale
+Jeśli w projekcie (i testach) polegasz na formatowaniu dat, czasu, walut itd. używając formatterów z JDK, to możesz spodziewać się drobnych problemów.
 
-- Jeśli w projekcie formatowanie dat jest, stref czasowych itd jest istotne i masz na to testy, to spodziewaj się czerwoności.
-Unicode Consortium's Common Locale Data Repository (CLDR)
+Otóż od Javy 9 [domyślnie włączone](https://openjdk.java.net/jeps/252) jest używanie standardu [Unicode Consortium's Common Locale Data Repository (CLDR)](http://cldr.unicode.org/). CLDR było dostępne już w JDK 8, ale domyślnie było wyłączone.
 
-CLDR było dostępne już w jdk 8, ale domyślnie było wyłączone.
-Java 9 wprowadza domyślnie zgodność z https://openjdk.java.net/jeps/252 ... Żeby użyć starszej wersji można użyć `-Djava.locale.providers=COMPAT,SPI`.
+Poza zmianami widoczymi na pierwszy rzut oka mogą pojawić się
 
-NBSP
+Żeby użyć starszej wersji można włączyć properties `-Djava.locale.providers=COMPAT,SPI`, ale oczywiście lepiej poprawić kod tak, żeby było zgodnie ze standardem.
 
+
+## Warning 'An illegal reflective access operation has occurred'
 - `--illegal-access=permit` w testach - pojawia się kiedy jakaś biblioteka używa `setAccessible(true)`. W testach można sobie na to pozwolić
 
-- Naprawianie błędów kompilacji
-sun.* com.sun.*
+
+# Podsumowanie
+Jeśli Twój projekt dalej
+
+Powodzenia!
