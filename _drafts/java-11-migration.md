@@ -1,10 +1,17 @@
-Ostatnio pomagałem, z doskoku, w jednej aplikacji zmigrować się z Javy 8 do Javy 11. Aplikacja legacy, dość... Projekt używa mavena, więc skupię się na nim, w gradle pewnie będzie podobnie.
+---
+layout: post
+title: "Migracja JDK 8 -> JDK 11"
+date: 2020-05-07 07:40:00 +0200
+tags: [java]
+---
 
-Java 8 to taki nowy Cobol (link).
+Java 8 ma już swoje lata i jest już niewspierana, chyba że mamy komercyjne wsparcie od Oracle. Niestety wiele aplikacji ciągle z niej korzysta (niektórzy mówią nawet, że to nowy COBOL).
 
-Raczej trochę wskazówek, niż kompletny poradnik. Poradnik: https://blog.codefx.org/java/java-11-migration-guide/ https://winterbe.com/posts/2018/08/29/migrate-maven-projects-to-java-11-jigsaw/
+Ostatnio pomagałem, z doskoku, w jednej aplikacji zmigrować się z Javy 8 do Javy 11. Projekt używa mavena, więc skupię się na nim, w gradle pewnie będzie podobnie.
 
-Kilka punktów, które mogą pomóc mnie albo komuś innemu w przyszłości.
+To będzie raczej trochę wskazówek, które mogą pomóc mnie albo komuś innemu w przyszłości, niż kompletny poradnik.
+
+Po więcej szczegółowych informacji polecam [wpis na blogu Benjamina Winterberga](https://winterbe.com/posts/2018/08/29/migrate-maven-projects-to-java-11-jigsaw/), bardziej obszerny poradnik na [blogu CodeFX](https://blog.codefx.org/java/java-11-migration-guide/) oraz poradniki od Oracle: [migracja do JDK 9](https://docs.oracle.com/javase/9/migrate/toc.htm), [do JDK 10](https://docs.oracle.com/javase/10/migrate/toc.htm) i do [JDK 11](https://docs.oracle.com/en/java/javase/11/migrate/index.html).
 
 # Zanim zaczniesz
 
@@ -99,20 +106,53 @@ Na szczęście większość rzeczy została udostępniona w API, w lepszych, bar
 
 
 ## Locale
-Jeśli w projekcie (i testach) polegasz na formatowaniu dat, czasu, walut itd. używając formatterów z JDK, to możesz spodziewać się drobnych problemów.
 
-Otóż od Javy 9 [domyślnie włączone](https://openjdk.java.net/jeps/252) jest używanie standardu [Unicode Consortium's Common Locale Data Repository (CLDR)](http://cldr.unicode.org/). CLDR było dostępne już w JDK 8, ale domyślnie było wyłączone.
+Od Javy 9 [domyślnie włączone](https://openjdk.java.net/jeps/252) jest używanie standardu [Unicode Consortium's Common Locale Data Repository (CLDR)](http://cldr.unicode.org/). CLDR było dostępne już w JDK 8, ale domyślnie było wyłączone.
 
-Poza zmianami widoczymi na pierwszy rzut oka mogą pojawić się
+Jeśli w projekcie (i testach) polegasz na formatowaniu dat, czasu, walut itd. używając formatterów z JDK, to możesz spodziewać się drobnych problemów. Dla przykładu:
 
-Żeby użyć starszej wersji można włączyć properties `-Djava.locale.providers=COMPAT,SPI`, ale oczywiście lepiej poprawić kod tak, żeby było zgodnie ze standardem.
+```bash
+java.lang.AssertionError:
+Expected: is "11:55 AM UTC"
+     but: was "١١:٥٥ AM UTC"
+```
 
+Żeby użyć starszej wersji można użyć propertiesa `-Djava.locale.providers=COMPAT,SPI`, ale oczywiście lepiej poprawić kod tak, żeby było zgodnie ze standardem.
+
+
+Dodatkowo mogą pojawić się rzeczy typu:
+
+```bash
+java.lang.AssertionError:
+Expected: is "100 000"
+     but: was "100 000"
+```
+
+tutaj przy formatowaniu zmieniono spację na [*non-breaking space*](https://en.wikipedia.org/wiki/Non-breaking_space). To bardzo dobra zmiana, bo zapobiega m.in sytuacjom, kiedy symbol waluty jest w jednej linii, a wartość jest w linii poprzedniej. Tutaj przełączenie propertiesa `java.locale.providers` już nie pomoże i trzeba będzie poprawić kod.
 
 ## Warning 'An illegal reflective access operation has occurred'
-- `--illegal-access=permit` w testach - pojawia się kiedy jakaś biblioteka używa `setAccessible(true)`. W testach można sobie na to pozwolić
 
+Wraz z nadejściem modułów Jigsaw zwiększyła się enkapsulacja i zwiększyły się obostrzenia co do komunikacji między modułami. Ostrzeżenie `An illegal reflective access operation has occurred` pojawia się kiedy używamy refleksji, żeby dostać się np. do niepublicznych klas/pól.
+
+Jeśli warning jest spowodowany przez nasz kod, to najlepiej to poprawić (tutaj najlepiej doczytać - plan na przyszłość). Gorzej, jeśli powoduje to jakaś biblioteka, z której korzystamy.
+
+Żeby nie blokować migracji autorzy zdecydowali się na warning, zamiast na błąd kompilacji. Żeby je wyłączyć można użyć argumentu `--illegal-access=permit` przy uruchamianiu.
+
+Dla kodu produkcyjnego zostawiłbym to ostrzeżenie, ale myślę, że w testach można je wyłączyć. Dla pluginu Surefire (analogicznie dla Failsafe):
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>${surefire.version}</version>
+    <configuration>
+        <argLine>--illegal-access=permit</argLine>
+    </configuration>
+</plugin>
+```
 
 # Podsumowanie
-Jeśli Twój projekt dalej
+
+Jest tego sporo, a i tak to nie wszystkie problemy, które można napotkać przy migracji do nowej wersji Javy. Ale jeśli Twój projekt dalej używa starego JDK, to warto zacząć go migrować, choćby małymi kroczkami.
 
 Powodzenia!
