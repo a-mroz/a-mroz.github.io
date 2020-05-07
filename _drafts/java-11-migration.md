@@ -7,22 +7,32 @@ tags: [java]
 
 Java 8 ma już swoje lata i jest już niewspierana, chyba że mamy komercyjne wsparcie od Oracle. Niestety wiele aplikacji ciągle z niej korzysta (niektórzy mówią nawet, że to nowy COBOL).
 
-Ostatnio pomagałem, z doskoku, w jednej aplikacji zmigrować się z Javy 8 do Javy 11. Projekt używa mavena, więc skupię się na nim, w gradle pewnie będzie podobnie.
+Ostatnio pomagałem, z doskoku, w jednej aplikacji zmigrować się z Javy 8 do Javy 11. Projekt używa Mavena, więc skupię się na nim, w Gradle pewnie będzie podobnie.
 
 To będzie raczej trochę wskazówek, które mogą pomóc mnie albo komuś innemu w przyszłości, niż kompletny poradnik.
 
 Po więcej szczegółowych informacji polecam [wpis na blogu Benjamina Winterberga](https://winterbe.com/posts/2018/08/29/migrate-maven-projects-to-java-11-jigsaw/), bardziej obszerny poradnik na [blogu CodeFX](https://blog.codefx.org/java/java-11-migration-guide/) oraz poradniki od Oracle: [migracja do JDK 9](https://docs.oracle.com/javase/9/migrate/toc.htm), [do JDK 10](https://docs.oracle.com/javase/10/migrate/toc.htm) i do [JDK 11](https://docs.oracle.com/en/java/javase/11/migrate/index.html).
 
+
+
+{% include image.html
+            img="/assets/coffee-839169_640.jpg"
+            alt="Some Java"
+            caption="Some Java - David Castillo"
+            url="https://pixabay.com/pl/users/Foundry-923783/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=839169"
+%}
+
+
 # Zanim zaczniesz
 
-Zostaw jdk 8 na dysku, przynajmniej na czas migracji. Czasem jest potrzeba przełączenia się do starszej wersji i sprawdzenia jak coś działało. Do zarządzania wieloma wersjami jdk (i nie tylko) na jednej maszynie polecam [SdkMan](https://sdkman.io/).
+Zostaw JDK 8 na dysku, przynajmniej na czas migracji. Czasem jest potrzeba przełączenia się do starszej wersji i sprawdzenia jak coś działało. Do zarządzania wieloma wersjami JDK (i nie tylko) na jednej maszynie polecam [SdkMan](https://sdkman.io/).
 
-Najpierw sprawdź, czy projekt buduje się na twojej maszynie przy użyciu jdk 8 i czy działają testy. Niby trywialne, ale ja popełniłem błąd i założyłem, że chociaż nie robiłem nic w tym projekcie od dłuższego czasu, to skoro ostatnim razem działało, to teraz też działa. No i najpierw przełączyłem się na jdk 11 i napotkałem na [failujące testy]({% post_url 2020-05-01-sprawdz-swoje-zmienne %}). Gdybym sprawdził to wcześniej, to odpadłaby mi jedna rzecz do sprawdzenia - czy to nie migracja spowodowała problem.
+Najpierw sprawdź, czy projekt buduje się na twojej maszynie przy użyciu JDK 8 i czy działają testy. Niby trywialne, ale ja popełniłem błąd i założyłem, że chociaż nie robiłem nic w tym projekcie od dłuższego czasu, to skoro ostatnim razem działało, to teraz też działa. No i najpierw przełączyłem się na JDK 11 i napotkałem na [failujące testy]({% post_url 2020-05-01-sprawdz-swoje-zmienne %}). Gdybym sprawdził to wcześniej, to odpadłaby mi jedna rzecz do sprawdzenia - czy to nie migracja spowodowała problem.
 
 # Zależności
-Przed przełączeniem na nowe JDK lepiej najpierw podnieść wersje bibliotek/frameworków i pluginów mavena, tam gdzie to możliwe.
+Przed przełączeniem na nowe JDK lepiej najpierw podnieść wersje bibliotek/frameworków i pluginów Mavena, tam gdzie to możliwe.
 
-## Pluginy mavena
+#### Pluginy Mavena
 
 Część pluginów mavena w starszych wersjach nie będzie kompatybilna z Javą 11. Przykładowo `maven-compiler-plugin` przed wersją `3.8.0` domyślnie nie obsługuje Javy 11.
 
@@ -32,24 +42,24 @@ Część pluginów mavena w starszych wersjach nie będzie kompatybilna z Javą 
 
 Tutaj chyba najlepiej użyć wszystkiego co najnowsze.
 
-Niespodziankę sprawił mi plugin mavena do AspectJ. Niestety plugin od MojoHaus nie wspiera jeszcze nowszej Javy. Na szczęście jeden z programistów stworzył forka, którego można użyć. Jeśli w projekcie napotkasz takie zależności, to polecam (ten wątek)[https://github.com/mojohaus/aspectj-maven-plugin/pull/45].
+Niespodziankę sprawił mi plugin do AspectJ. Niestety ten od MojoHaus jeszcze nie wspiera nowszej Javy. Na szczęście jeden z programistów stworzył forka, którego można użyć. Jeśli w projekcie napotkasz takie zależności, to polecam [ten wątek](https://github.com/mojohaus/aspectj-maven-plugin/pull/45).
 
-## Biblioteki
+#### Biblioteki
 
-Tak jak przy pluginach mavena, część zależności w starszych wersjach nie zadziała z Javą 11.
+Tak jak przy pluginach Mavena, część zależności w starszych wersjach nie zadziała z Javą 11.
 Żeby zobaczyć nowsze wersje można użyć polecenia
 
 `mvn versions:display-dependency-updates`
 
-Ale tutaj uwaga na zmiany nazw artefaktów, plugin może nie znaleźć nowszych wersji. Na przykład artefakt `hamcrest-all.jar` od jakiegoś czasu nie jest wspierany i (powinno sie używać)[http://hamcrest.org/JavaHamcrest/distributables] artefaktu `hamcrest.jar`.
+Ale tutaj uwaga na zmiany nazw artefaktów, plugin może nie znaleźć nowszych wersji. Na przykład artefakt `hamcrest-all.jar` od jakiegoś czasu nie jest wspierany i [powinno sie używać](http://hamcrest.org/JavaHamcrest/distributables) artefaktu `hamcrest.jar`.
 
 To jest też dobry moment żeby zerknąć na strony projektowe zależności i sprawdzić release notes.
 
-Polecam też zwrócić uwagę na biblioteki typu `asm`, `byte-buddy`, `cglib`, `javassist`, `cglib` - bardzo prawdopodobne, że będą potrzebowały aktualizacji.
+Polecam też zwrócić uwagę na biblioteki typu `asm`, `byte-buddy`, `cglib`, `javassist` - bardzo prawdopodobne, że będą potrzebowały aktualizacji.
 
 Przy okazji warto przejrzeć zależności w projekcie. W moim przypadku okazało się, że część jest zaszłościami historycznymi i jest już niepotrzebna albo da się ich pozbyć przez modyfikację kilku linijek. Mniej zależności to mniejszy narzut na utrzymanie projektu, zwłaszcza projektach medycznych, gdzie trzeba przygotowywać np. kwartalne raporty z analizami nowych wersji zależności.
 
-### Mockito
+#### Mockito
 
 Jeśli w projekcie jest jeszcze Mockito w wersji 1.x, to czas przejść do najnowszej wersji. Tym bardziej, że domyślnie Mockito 1.x nie zadziała w Javie 11 i konieczne jest [trochę zmian](https://github.com/mockito/mockito/issues/1419).
 
@@ -58,11 +68,11 @@ Ale przy przechodzeniu na nowsze Mockito spodziewaj się dużo warningów i fail
 
 # Kompilacja i testy
 
-Przełącz się na jdk i zbuduj projekt. Nie najgorszym pomysłem może być zbudowanie projektu na nowym JDK, ale przy zachowaniu kompatybilności ze starszą wersją i dopiero później ustawienie Javy 11.
+Przełącz się na nowe JDK i zbuduj projekt. Nie najgorszym pomysłem może być zbudowanie projektu na nowym JDK, ale przy zachowaniu kompatybilności ze starszą wersją i dopiero później ustawienie Javy 11.
 
 ```xml
 <properties>
-    <java.version>8</java.version> <!-- zmiana do 11 -->
+    <java.version>8</java.version> <!-- później zmiana do 11 -->
 </properties>
 ...
 
@@ -79,7 +89,7 @@ Przełącz się na jdk i zbuduj projekt. Nie najgorszym pomysłem może być zbu
 
 Tutaj już trzeba sprawdzać rzeczy jedna po drugiej - Google Twoim przyjacielem jest. Kilka rzeczy, które można napotkać:
 
-## Zależności do JEE
+#### Zależności do JEE
 
 Jeśli używasz funkcjonalności z JEE, na przykład:
 - JAXB (używany m.in. przez Hibernate),
@@ -98,14 +108,14 @@ Przykładowo, żeby móc używać `javax.annotation` (w tym `@PostConstruct`, kt
 </dependency>
 ```
 
-## Zależności do sun.* i com.sun.*
+#### Zależności do sun.* i com.sun.*
 
 No i stało się. Chyba od zawsze ostrzegano, że używanie klas w tych pakietach nie jest bezpieczne i ostatecznie [nie ma już do nich dostępu](https://openjdk.java.net/jeps/260). To spowodowało trochę problemów dla różnych frameworków, ale ostatecznie sytuacja została opanowana.
 
 Na szczęście większość rzeczy została udostępniona w API, w lepszych, bardziej bezpiecznych wersjach. Na przykład `sun.misc.BASE64Encoder` może być zastąpiony `java.util.Base64.getEncoder()`.
 
 
-## Locale
+#### Locale
 
 Od Javy 9 [domyślnie włączone](https://openjdk.java.net/jeps/252) jest używanie standardu [Unicode Consortium's Common Locale Data Repository (CLDR)](http://cldr.unicode.org/). CLDR było dostępne już w JDK 8, ale domyślnie było wyłączone.
 
@@ -130,7 +140,7 @@ Expected: is "100 000"
 
 tutaj przy formatowaniu zmieniono spację na [*non-breaking space*](https://en.wikipedia.org/wiki/Non-breaking_space). To bardzo dobra zmiana, bo zapobiega m.in sytuacjom, kiedy symbol waluty jest w jednej linii, a wartość jest w linii poprzedniej. Tutaj przełączenie propertiesa `java.locale.providers` już nie pomoże i trzeba będzie poprawić kod.
 
-## Warning 'An illegal reflective access operation has occurred'
+#### Warning 'An illegal reflective access operation has occurred'
 
 Wraz z nadejściem modułów Jigsaw zwiększyła się enkapsulacja i zwiększyły się obostrzenia co do komunikacji między modułami. Ostrzeżenie `An illegal reflective access operation has occurred` pojawia się kiedy używamy refleksji, żeby dostać się np. do niepublicznych klas/pól.
 
