@@ -3,8 +3,7 @@ layout: post
 title:  "[EN] Environment variables in IntelliJ IDEA"
 date:   2020-05-12 06:28:00 +0200
 tags: [zsh, bash, intellij, env variables, linux, env variables]
-
-----
+---
 
 Recently I encountered an issue with how IntelliJ reads environment variables. In one project, I was helping with, Maven build was using external `npm` command to build some frontend files. Unfortunately, when I started IntelliJ IDEA using a desktop shortcut (in Ubuntu) and ran Maven build inside the IDE it didn't see my `PATH` variable defined in configuration files (neither zsh nor bash).
 
