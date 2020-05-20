@@ -37,7 +37,7 @@ oot, setImmediate, setInterval, setTimeout, undefined, unescape.
 Note: This is a precaution to guard against uninitialized mock variables. If it is ensured that the mock is required lazily, variable names prefixed with `mock` (case insensitive) are permitted.
 ```
 
-To co się tu dzieje spowodowane jest hoistingiem. Niby człowiek wie, czytał, ale i tak może go to kopnąć w tyłek.
+To co się tu dzieje spowodowane jest [hoistingiem]({% post_url 2020-05-18-hosting-w-js %}). Niby człowiek wie, czytał, ale i tak może go to kopnąć w tyłek.
 
 `jest.mock` zostanie przez `babel-plugin-jest-hoist` wyniesiony na górę pliku. I co prawda zobaczy deklarację funkcji `fn`, bo deklaracje funkcji są hoistowane. Ale nie zobaczy jej definicji i będzie marudził, [by design](https://github.com/facebook/jest/issues/9730).
 
