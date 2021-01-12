@@ -21,6 +21,21 @@ Po zakończeniu [przygody z Advent of Code]({% post_url 2021-01-05-advent-of-cod
 
 Od początku grudnia 2020 staram się robić przynajmniej jeden commit dziennie na [Githubie](https://github.com/a-mroz). Do tej pory nie udało się tego osiągnąć jedynie w dni, w które nie było mnie w domu - drugi dzień Świąt i wyjazd w góry (10.01). Całkiem niezła passa.
 
+Zrobiłem też w końcu test Gallupa. Wygląda na to, że moje główne talenty to:
+
+1. Deliberative
+2. Learner
+3. Input
+4. Intellection
+5. Harmony
+6. Analytical
+7. Responsibility
+8. Restorative
+9. Discipline
+10. Significance
+
+Po przejrzeniu opisów stwierdziłem, że to by się nawet zgadzało. Jeden z celów na ten rok, to praca nad tymi talentami, ale w tym tygodniu niewiele poświęciłem na to czasu.
+
 # Sport
 
 Niestety przez pandemię siłownie są nieczynne i nie mam jak zrobić pomiarów na Tanicie. A pomiary by się przydały, bo po okresie budowania siły (pobiłem chyba wszystkie swoje rekordy siłowe) i okresie świątecznym rozpocząłem redukcję. Na razie waga stoi raczej w miejscu, ale wszystko w swoim czasie.
