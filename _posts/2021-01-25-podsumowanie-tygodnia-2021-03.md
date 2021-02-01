@@ -42,4 +42,4 @@ Nic nowego, jeśli chodzi o podróże. Żadnych wyjazdów, siedzenie w mieście.
 
 # Podsumowanie
 
-Z jednej strony tydzień znów tydzień trochę mniej produktywny, niżbym chciał. Z drugiej, sporo odpoczynku i popchnięte do przodu trochę spraw niespecjalnie pasujących na bloga. Ogółem, do przodu.
+Z jednej strony znów tydzień trochę mniej produktywny, niżbym chciał. Z drugiej, sporo odpoczynku i popchnięte do przodu trochę spraw niespecjalnie pasujących na bloga. Ogółem, do przodu.
