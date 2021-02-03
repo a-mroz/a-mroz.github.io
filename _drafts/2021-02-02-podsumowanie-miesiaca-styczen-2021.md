@@ -31,9 +31,9 @@ Waga łącznie około 2kg w dół (o ile ufać mojej wadze łazienkowej...), co 
 
 # Książki
 
-W styczniu udało mi się przeczytać całkiem sporo książek. Cztery beletrystyczne: Żeglarz (zaczęty jeszcze w 2020), Ocean na Krańcu Drogi, Przyjaciel Człowieka i komiks, który moim zdaniem można podpiąć pod beletrystykę, Fis de siecle: Falangi Czarnego Porządku, Polowanie.
+W styczniu udało mi się przeczytać całkiem sporo książek. Cztery beletrystyczne: [„Żeglarz"](https://www.goodreads.com/book/show/56340202-eglarz) (zaczęty jeszcze w 2020), [„Ocean na końcu drogi"](https://www.goodreads.com/book/show/41091446-ocean-na-ko-cu-drogi), [„Przyjaciel Człowieka"](https://www.goodreads.com/book/show/49018411-przyjaciel-cz-owieka) i komiks, który moim zdaniem można podpiąć pod beletrystykę, [Fins de siecle: Falangi czarnego porządku. Polowanie](https://www.goodreads.com/book/show/23484593-fins-de-siecle).
 
-Z literatury niebeletrystycznej przeczytałem Atomowe Nawyki, a w trakcie mam Finansową Fortecę i Przewodnik po Winach.
+Z literatury niebeletrystycznej przeczytałem [„Atomowe nawyki. Drobne zmiany, niezwykłe efekty"](https://www.goodreads.com/book/show/48649811-atomowe-nawyki-drobne-zmiany-niezwyk-e-efekty), a w trakcie mam [„Finansową Fortecę"](https://www.goodreads.com/book/show/55289532-finansowa-forteca) i [„Wino. Kurs Wiedzy"](<(https://www.goodreads.com/book/show/24992423-wino-kurs-wiedzy)>).
 
 # Podróże
 
@@ -42,3 +42,5 @@ Pandemia dalej w akcji, także na ten moment niespecjalnie można liczyć na dal
 Na szczęście w góry nie jest daleko, więc udało się wyskoczyć na sanki, dwa razy na wieś (i tutaj też sanki) oraz wejście na Ślężę, po raz pierwszy zimą. Jak na obecne warunki nie jest źle.
 
 # Podsumowanie
+
+Poza tym pchnięte do przodu trochę spraw prywatnych i związanych z mieszkaniem, o których nie piszę na blogu.
