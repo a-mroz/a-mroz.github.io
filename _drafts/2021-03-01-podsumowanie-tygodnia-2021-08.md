@@ -19,25 +19,23 @@ Jeśli chodzi o naukę AWS, to dalej nie mam dostępu do Linux Academy/Cloud Gur
 
 # Sport
 
-7 treningów...
+W tym tygodniu bardzo dobrze. Moje Suunto pokazuje 7 treningów. A w zasadzie, pokazywałoby nawet więcej, gdybym nie zapomniał go naładować...
 
-Waga odrobinę w dół, chociaż dalej nie tyle, ile bym chciał.
+Waga, po dłuższej stagnacji, odrobinę w dół, chociaż dalej nie tyle, ile bym chciał.
 
 # Książki
 
-Co prawda, na czytanie nie miałem tyle czasu, ile bym chciał, ale udało mi się skończyć czytać [„Finansową Fortecę"](https://www.goodreads.com/book/show/55289532-finansowa-forteca). Książka zwróciła mi uwagę na kilka spraw, o których nie myślałem lub odkładałem na potem. I już zacząłem, bardzo powoli, przeorganizowywać swoje portfele inwestycji i oszczędności.
+[„The Renaissance Soul: Life Design for People with Too Many Passions to Pick Just One"](https://www.goodreads.com/book/show/415595.The_Renaissance_Soul) dalej w trakcie. Na razie nie jestem specjalnie zachwycony.
 
-Zacząłem też czytać [„The Renaissance Soul: Life Design for People with Too Many Passions to Pick Just One"](https://www.goodreads.com/book/show/415595.The_Renaissance_Soul). W trakcie, ale na razie nie jestem specjalnie zadowolony.
+[Wino. Kurs wiedzy](https://www.goodreads.com/book/show/24992423-wino-kurs-wiedzy) na ten moment w zasadzie zawieszony, ale planuję wrócić w najbliższym czasie.
 
-Zacząłem Gaimana..
-
-[Wino. Kurs wiedzy](https://www.goodreads.com/book/show/24992423-wino-kurs-wiedzy) chwilowo zawieszony, jakoś nie mam weny.
+Potrzebowałem, dla odmiany, czegoś lżejszego. Zabrałem się za [„Rzeczy Ulotne"](https://www.goodreads.com/book/show/38926130-rzeczy-ulotne) Gaimana. Muszę przyznać, że zaczyna się świetnie - Sherlock Holmes w świecie Lovecrafta? Oj tak. Szkoda tylko, że to jedno opowiadanie, a nie cała powieść.
 
 Przypominam, że jeśli ktoś ma konto w portalu Goodreads, to tutaj można sprawdzić mój [„Reading Challenge"](https://www.goodreads.com/user_challenges/25743441), w którym średnio zwracam uwagę na liczby, ale takie podsumowanie roku to jednak niezła sprawa.
 
 # Podróże
 
-W tym tygodniu niestety nic z podróżowania. Zamiast tego udało się załatwić kilka domowych spraw.
+W tym tygodniu niestety nic z podróżowania. Zamiast tego udało się załatwić kilka domowych spraw, a mój gabinet powoli nabiera kształtów :)
 
 # Podsumowanie
 
