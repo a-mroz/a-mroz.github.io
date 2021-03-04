@@ -21,13 +21,9 @@ Poza tym trochę nauki (i zabawy!) z Micronautem i technologiami powiązanymi z 
 
 # Sport
 
-Tutaj nie jest źle. Moje Suunto pokazuje mi 19 aktywności i 17 dni treningowych. To częściej niż trening co drugi dzień. A nie ma tam trzech wyjść na sanki, wśród których przynajmniej jedno mógłbym spokojnie zaliczyć jako trening.
+Było całkiem nieźle. Naliczyłem 11 treningów siłowych (w tym jeden kalisteniczny), 3 biegowych (po około 5km każdy) i 3 jazdy na rowerze (łącznie około 40 km). I do tego wejście na Ślężę. Łącznie 18 aktywności.
 
-Wśród tych 19 aktywności był jeden trekking (na Ślężę), 16 treningów siłowych lub kalistenicznych i dwa treningi biegowe.
-
-Liczyłem na to, że uda się wrócić do w miarę regularnego biegania, ale trochę przeszkodziła w tym pogoda, a trochę lenistwo i brak czasu. Nad tym trzeba będzie popracować.
-
-Waga łącznie około 2 kilogramów w dół (o ile ufać mojej wadze łazienkowej...), co też jest niezłym wynikiem. Niestety, siłownie dalej są zamknięte, więc z pomiaru na Tanicie nici.
+Znów wychodzi średnio częściej niż co drugi dzień, zwłaszcza w lutym, który miał tylko 28 dni. Choć, jak to ze średnią, to nie do końca prawda, bo sporo dni miało po dwie aktywności, więc efektywnie dni treningowych było mniej.
 
 # Książki
 
