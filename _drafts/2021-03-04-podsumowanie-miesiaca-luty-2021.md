@@ -11,13 +11,7 @@ Co prawda, blog miał być programistyczny, ale to jest jednak mój blog, więc 
 
 # Rozwój
 
-W styczniu sporo nauki AWSa i przygotowań do certyfikacji. Niestety, to musi chwilę zaczekać, bo skończył mi się dostęp do Linux Academy i muszę poczekać na odświeżenie. Za to udało mi się wrócić do powtórek z Anki, co mnie cieszy, bo miałem spore wyrzuty sumienia, że to zaniedbałem.
-
-Oprócz teoretycznej nauki AWSa trochę praktyki z technologiami serverless (Lambda, DynamoDB, API Gateway, Serverless framework itp.) przy drobnym projekcie skracacza linków.
-
-Na blogu, poza podsumowaniami tygodni, niewiele. Jeden zaczęty post o frameworku Serverless, który mam nadzieję niedługo skończyć.
-
-Poza tym trochę nauki (i zabawy!) z Micronautem i technologiami powiązanymi z mikroserwisami. Do kontynuacji w lutym.
+W lutym sporo czasu spędzonego z Micronautem.
 
 # Sport
 
@@ -38,9 +32,3 @@ O wszystkich było w podsumowaniach tygodnia, więc chyba nie ma sensu się tuta
 Niestety, pandemia dalej w akcji, a pogoda nie rozpieszczała. Jedynie zimowe wejście na Ślężę, drugi raz w życiu. Mam nadzieję, że w marcu uda się trochę więcej.
 
 # Podsumowanie
-
-Styczeń okazał się całkiem udany. Przede wszystkim pod kątem sportowym i przeczytanych książek. Także ze sprawami dotyczącymi programowania i rozwoju nie jest źle.
-
-Poza tym pchnięte do przodu trochę spraw prywatnych i związanych z mieszkaniem, o których nie piszę na blogu.
-
-Oczywiście, zawsze mogło być lepiej, ale spokojnie, powoli do przodu. Oby tak dalej.
