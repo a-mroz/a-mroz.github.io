@@ -17,9 +17,8 @@ Jeśli chodzi o AWS, to przede wszystkim powtórki z fiszek, trochę douczenie s
 
 # Sport
 
-Było całkiem nieźle. Naliczyłem 11 treningów siłowych (w tym jeden kalisteniczny), 3 biegowych (po około 5 km każdy) i 3 jazdy na rowerze (łącznie około 40 km). I do tego wejście na Ślężę. Łącznie 18 aktywności.
-
-Znów wychodzi średnio częściej niż co drugi dzień, zwłaszcza w lutym, który miał tylko 28 dni. Choć, jak to ze średnią, to nie do końca prawda, bo sporo dni miało po dwie aktywności, więc efektywnie dni treningowych było mniej.
+Było całkiem nieźle. Trzy razy aerial joga (świetna zabawa!), 13 treningów siłowych, 2 kalisteniczne, 3 biegowe (po około 4 km) i 5 jazd na rowerze (łącznie około 70km).
+Razem 26 aktywności.
 
 # Książki
 
