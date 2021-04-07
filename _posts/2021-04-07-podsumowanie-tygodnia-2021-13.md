@@ -11,11 +11,15 @@ Co prawda, blog miał być programistyczny, ale to jest jednak mój blog, więc 
 
 # Rozwój
 
+Z powodu świąt i nawału obowiązków niewiele w tej kategorii. Zacząłem szkolenie Kafka Deep Dive na platformie ACloudGuru. Jestem jeszcze na podstawach, bo to w zasadzie moja pierwsza styczność z Kafką. Na razie jest dobrze i bardzo mi się podoba.
+
+Poza tym powtórki z AWSa przy wykorzystaniu fiszek w Anki. I na bieżąco nauka rzeczy, których potrzebuję w nowym projekcie (k8s itp.).
+
 # Sport
 
-Pomimo świąt, udało się poruszać. Były dwa treningi siłowe, dwa razy Aerial Joga i dwa razy rower (10 i 17km). Łącznie 6 aktywności.
+Pomimo świąt, udało się trochę poruszać. Były dwa treningi siłowe, dwa razy Aerial Joga i dwa razy rower (10 i 17 km). Łącznie 6 aktywności.
 
-Niestety, w najbliższym czasie zapowiada się słaba pogoda, więc raczej nici z jazdy na rowerze a i z bieganiem może być słabo. W dodatku, szkoła jogi też obecnie jest zamknięta, więc ta aktywność też odpada. Ale nie ma co się załamywać, trzeba ćwiczyć tak, jak się da.
+Niestety, w najbliższym czasie zapowiada się słaba pogoda, więc raczej nici z jazdy na rowerze, a i z bieganiem może być słabo. W dodatku szkoła jogi też obecnie jest zamknięta, więc ta aktywność też odpada. Ale nie ma co się załamywać, trzeba ćwiczyć tak, jak się da.
 
 # Podsumowanie
 
