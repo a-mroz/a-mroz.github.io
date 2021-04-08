@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Podsumowanie miesiąca: Marzec 2021"
-date: 2021-04-01 19:43:00 +0100
+date: 2021-04-09 19:43:00 +0100
 tags: [podsumowanie miesiąca, 2021]
 ---
 
@@ -11,31 +11,22 @@ Co prawda, blog miał być programistyczny, ale to jest jednak mój blog, więc 
 
 # Rozwój
 
-W lutym sporo czasu spędzonego z Micronautem i technologiami z obszaru systemów rozproszonych. Tematy typu Circruit Breaker, OpenAPI, Zipkin, RxJava. W tym także debuggowanie i zgłoszenie błędu do Micronauta. Sporo postęp, moim zdaniem, choć nie taki, jaki bym sobie życzył. Głównie ze względu na ciężki okres w pracy, nadgodziny itp. w marcu powinno być z tym lepiej.
-
-Jeśli chodzi o AWS, to przede wszystkim powtórki z fiszek, trochę douczenie się o Kinesis. Dopiero co dostałem z powrotem dostęp do A Cloud Guru, więc w marcu planuję więcej w tym obszarze.
-
 # Sport
 
 Było całkiem nieźle. Trzy razy aerial joga (świetna zabawa!), 13 treningów siłowych, 2 kalisteniczne, 3 biegowe (po około 4 km) i 5 jazd na rowerze (łącznie około 70km).
-Razem 26 aktywności.
+
+Razem 26 aktywności. Zbliżam się do średnio jednej aktywności na dzień. Nieźle!
 
 # Książki
 
-W lutym skończyłem jedynie jedną książkę - [„Finansową Fortecę"](https://www.goodreads.com/book/show/55289532-finansowa-forteca).
+W marcu skończyłem dwie książki. [„Rzeczy Ulotne"](https://www.goodreads.com/book/show/38926130-rzeczy-ulotne) i [„The Renaissance Soul: Life Design for People with Too Many Passions to Pick Just One"](https://www.goodreads.com/book/show/415595.The_Renaissance_Soul).
 
-Za to zacząłem dwie inne - [„The Renaissance Soul: Life Design for People with Too Many Passions to Pick Just One"](https://www.goodreads.com/book/show/415595.The_Renaissance_Soul) i [„Rzeczy Ulotne"](https://www.goodreads.com/book/show/38926130-rzeczy-ulotne) Neila Gaimana.
+[Wino. Kurs wiedzy](https://www.goodreads.com/book/show/24992423-wino-kurs-wiedzy) dalej w zawieszeniu, a [Pragmatic Thinking and Learning: Refactor Your Wetware](https://www.goodreads.com/book/show/3063393-pragmatic-thinking-and-learning) i [„Smok Griaule"](https://www.goodreads.com/book/show/13410275-smok-griaule) dalej w trakcie.
 
 O wszystkich było w podsumowaniach tygodnia, więc chyba nie ma sensu się tutaj powtarzać.
 
 # Podróże
 
-Niestety, pandemia dalej w akcji, a pogoda nie rozpieszczała. Jedynie zimowe wejście na Ślężę, drugi raz w życiu. Mam nadzieję, że w marcu uda się trochę więcej.
+Niestety, tutaj nie udało się nic. Pandemia dalej w akcji, a pogoda nie rozpieszczała.
 
 # Podsumowanie
-
-Luty niestety nie wypadł tak, jakbym sobie tego życzył. Przede wszystkim ze względu na pracę i końcówkę niezbyt fajnego projektu.
-
-Na pewno cieszy spora ilość sportu i postęp z technologiami związanymi z systemami rozproszonymi, choć i tego nie było tyle, ile bym sobie życzył.
-
-Mam nadzieję, że marzec uda mi się lepiej wykorzystać.
