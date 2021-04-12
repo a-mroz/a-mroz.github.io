@@ -11,6 +11,14 @@ Co prawda, blog miał być programistyczny, ale to jest jednak mój blog, więc 
 
 # Rozwój
 
+W marcu było sporo przygotowań do certyfikacji z AWS - powtórki z fiszek, powrót do szkoleń z ACloudGuru - przerobienie testów, labów i powtórki tam, gdzie znalazłem braki.
+
+Poza tym początki pracy z mikroserwisami, w projekcie w pracy.
+
+Kurs k8s deep dive. Pierwsze kroki w pracy. Zaczęcie Kafka deep dive
+
+Micronaut - Deep Dive video.
+
 # Sport
 
 Było całkiem nieźle. Trzy razy aerial joga (świetna zabawa!), 13 treningów siłowych, 2 kalisteniczne, 3 biegowe (po około 4 km) i 5 jazd na rowerze (łącznie około 70km).
