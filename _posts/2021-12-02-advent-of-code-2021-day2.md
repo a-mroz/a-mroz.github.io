@@ -2,7 +2,7 @@
 layout: post
 title: "Advent of Code 2021 - Day 2"
 date: 2021-12-02 06:20:00 +0100
-tags: [advent of code, competitive programming]
+tags: [advent of code, competitive programming, python]
 ---
 
 Day 2 is [behind me](https://github.com/a-mroz/adventofcode2021/blob/master/day2.py). I enjoyed it, even though it was still pretty easy (I believe that's going to change soon).

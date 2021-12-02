@@ -2,7 +2,7 @@
 layout: post
 title: "Advent of Code 2021 - Day 1"
 date: 2021-12-01 20:00:00 +0100
-tags: [advent of code, competitive programming]
+tags: [advent of code, competitive programming, python]
 ---
 
 Here we go again. New Advent of Code has started today. I plan to take on the challenge and solve all the tasks before Christmas (even if some of them are solved later than the publishing day).
