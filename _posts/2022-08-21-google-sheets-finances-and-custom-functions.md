@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google Sheets – financial data and custom scripts"
-date: 2022-08-21 10:34:00 +0100
+date: 2022-08-21 10:34:00 +0200
 tags: [google sheets, finances, javascript, google cloud]
 ---
 
